@@ -1,0 +1,40 @@
+/* Bütün səhifəni ortalamaq üçün */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f2f2f2;
+  }
+  
+  .center-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Düymənin stili */
+  .modern-button {
+    padding: 15px 30px;
+    background-color: #28a745; /* Yaşıl */
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .modern-button i {
+    margin-right: 8px;
+  }
+  
+  /* Hover effekti */
+  .modern-button:hover {
+    background-color: #ffc107; /* Sarı */
+    color: black;
+    transform: translateY(-2px);
+  }
+  
