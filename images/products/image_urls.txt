@@ -1,0 +1,43 @@
+1. Bosch GSB 18V-50 Professional Elektrik Burğu
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/products/bosch-drill.jpg
+
+2. Makita GA5030 Bucaqölçən Cilalayıcı
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/products/makita-grinder.jpg
+
+3. DeWalt DCS391 Dairəvi Mişar
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/products/dewalt-saw.jpg
+
+4. Bosch GBH 2-26 Professional Perforator
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/products/bosch-rotary.jpg
+
+5. Stanley FMHT770 İstilik Tapançası
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/products/stanley-heat.jpg
+
+6. Makita BO5041 Ekssentrik Cilalayıcı
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/products/makita-sander.jpg
+
+7. Bosch GLM 40 Professional Lazer Məsafəölçən
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/products/bosch-measure.jpg
+
+8. DeWalt DCF887 Zərbəli Vintburan
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/products/dewalt-impact.jpg
+
+9. Makita KP0800 Elektrik Rəndə
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/products/makita-planer.jpg
+
+10. Bosch GOP 40-30 Professional Multi-Cutter
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/products/bosch-multi.jpg
+
+Brand Logos:
+
+1. Bosch Logo
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/brands/bosch.png
+
+2. Makita Logo
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/brands/makita.png
+
+3. DeWalt Logo
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/brands/dewalt.png
+
+4. Stanley Logo
+https://raw.githubusercontent.com/nazimbabayev/electrotools/main/images/brands/stanley.png 

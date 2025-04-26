@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroTools - Elektronika Alətlərinin Satışı</title>
+  <link rel="stylesheet" href="homepage.css">
+  <!-- Font Awesome ikonları üçün -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header class="main-header">
+    <div class="top-banner">
+      <h1>ELEKTRONİKA ALƏTLƏRİNİN SATIŞI</h1>
+    </div>
+    <div class="header-content">
+      <div class="logo">
+        <a href="homepage.html">ElectroTools</a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Məhsul axtarış...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </div>
+      <div class="user-actions">
+        <a href="profile.html" class="user-icon"><i class="fas fa-user"></i></a>
+        <a href="wishlist.html" class="wishlist-icon"><i class="fas fa-heart"></i></a>
+        <a href="cart.html" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="homepage.html" class="active"><i class="fas fa-home"></i> Ana səhifə</a></li>
+        <li><a href="electronics.html"><i class="fas fa-tools"></i> Elektrik alətləri</a></li>
+        <li><a href="smartphones.html"><i class="fas fa-mobile-alt"></i> Smartfonlar və aksesuarlar</a></li>
+        <li><a href="smartwatches.html"><i class="fas fa-clock"></i> Smart saatlar</a></li>
+        <li><a href="computers.html"><i class="fas fa-laptop"></i> Notbuklar və kompüterlər</a></li>
+        <li><a href="construction.html"><i class="fas fa-hammer"></i> Təmir və tikinti</a></li>
+        <li><a href="garden.html"><i class="fas fa-leaf"></i> Bağ və bağça</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Ana səhifə üçün böyük slayd -->
+    <section class="hero-slider">
+      <div class="slider">
+        <div class="slide active">
+          <img src="images/homepage/slider1.jpg" alt="Xüsusi təkliflər">
+          <div class="slide-content">
+            <h2>Elektrik alətlərində 25% endirim</h2>
+            <p>Peşəkar ustalar üçün ən yaxşı seçim</p>
+            <a href="electronics.html" class="btn">İndi alış-veriş et</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/homepage/slider2.jpg" alt="Yeni gələnlər">
+          <div class="slide-content">
+            <h2>Yeni iPhone 15 modellərini kəşf edin</h2>
+            <p>İnnovativ texnologiya, mükəmməl dizayn</p>
+            <a href="smartphones.html" class="btn">Kəşf et</a>
+          </div>
+        </div>
+        <div class="slide">
+          <img src="images/homepage/slider3.jpg" alt="Tikinti alətləri">
+          <div class="slide-content">
+            <h2>Təmir və tikinti üçün hər şey</h2>
+            <p>Yüksək keyfiyyətli alətlər əlçatan qiymətlərlə</p>
+            <a href="construction.html" class="btn">Alətləri göstər</a>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+          <div class="dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+          </div>
+          <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kateqoriyalar bölməsi -->
+    <section class="categories-section">
+      <h2 class="section-title">Kateqoriyalar</h2>
+      <div class="category-cards">
+        <a href="electronics.html" class="category-card">
+          <img src="images/homepage/category-electronics.jpg" alt="Elektrik alətləri">
+          <div class="category-name">Elektrik alətləri</div>
+        </a>
+        <a href="smartphones.html" class="category-card">
+          <img src="images/homepage/category-smartphones.jpg" alt="Smartfonlar">
+          <div class="category-name">Smartfonlar</div>
+        </a>
+        <a href="computers.html" class="category-card">
+          <img src="images/homepage/category-laptops.jpg" alt="Notbuklar">
+          <div class="category-name">Notbuklar</div>
+        </a>
+        <a href="smartwatches.html" class="category-card">
+          <img src="images/homepage/category-smartwatches.jpg" alt="Smart saatlar">
+          <div class="category-name">Smart saatlar</div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Populyar məhsullar -->
+    <section class="popular-products">
+      <h2 class="section-title">Ən çox satılan məhsullar</h2>
+      <div class="product-slider">
+        <div class="product-cards">
+          <div class="product-card">
+            <div class="discount-badge">-15%</div>
+            <div class="wishlist-button"><i class="far fa-heart"></i></div>
+            <img src="images/homepage/bosch-gsb.jpg" alt="Bosch GSB">
+            <h3>Bosch GSB 18V-50 Professional Elektrik Burğu</h3>
+            <div class="price">
+              <span class="current-price">399.99 ₼</span>
+              <span class="old-price">469.99 ₼</span>
+            </div>
+            <div class="product-buttons">
+              <button class="add-to-cart">Səbətə at</button>
+              <button class="details">Ətraflı</button>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <div class="discount-badge">-20%</div>
+            <div class="wishlist-button"><i class="far fa-heart"></i></div>
+            <img src="images/homepage/iphone14.jpg" alt="iPhone 14">
+            <h3>iPhone 14 Pro 256GB Space Black</h3>
+            <div class="price">
+              <span class="current-price">2499.99 ₼</span>
+              <span class="old-price">2799.99 ₼</span>
+            </div>
+            <div class="product-buttons">
+              <button class="add-to-cart">Səbətə at</button>
+              <button class="details">Ətraflı</button>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <div class="discount-badge">-10%</div>
+            <div class="wishlist-button"><i class="far fa-heart"></i></div>
+            <img src="images/homepage/dewalt-dcs391.jpg" alt="DeWalt DCS391">
+            <h3>DeWalt DCS391 20V Dairəvi Mişar</h3>
+            <div class="price">
+              <span class="current-price">449.99 ₼</span>
+              <span class="old-price">499.99 ₼</span>
+            </div>
+            <div class="product-buttons">
+              <button class="add-to-cart">Səbətə at</button>
+              <button class="details">Ətraflı</button>
+            </div>
+          </div>
+          
+          <div class="product-card">
+            <div class="discount-badge">-25%</div>
+            <div class="wishlist-button"><i class="far fa-heart"></i></div>
+            <img src="images/homepage/macbook-air.jpg" alt="MacBook Air">
+            <h3>Apple MacBook Air M2 8GB/256GB</h3>
+            <div class="price">
+              <span class="current-price">2249.99 ₼</span>
+              <span class="old-price">2999.99 ₼</span>
+            </div>
+            <div class="product-buttons">
+              <button class="add-to-cart">Səbətə at</button>
+              <button class="details">Ətraflı</button>
+            </div>
+          </div>
+        </div>
+        <div class="slider-controls">
+          <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+          <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brendlər -->
+    <section class="brands-section">
+      <h2 class="section-title">Brendlər</h2>
+      <div class="brands-slider">
+        <div class="brand">
+          <img src="images/homepage/brand-apple.png" alt="Apple">
+        </div>
+        <div class="brand">
+          <img src="images/homepage/brand-samsung.png" alt="Samsung">
+        </div>
+        <div class="brand">
+          <img src="images/homepage/brand-bosch.png" alt="Bosch">
+        </div>
+        <div class="brand">
+          <img src="images/homepage/brand-dewalt.png" alt="DeWalt">
+        </div>
+        <div class="brand">
+          <img src="images/homepage/brand-makita.png" alt="Makita">
+        </div>
+        <div class="brand">
+          <img src="images/homepage/brand-xiaomi.png" alt="Xiaomi">
+        </div>
+      </div>
+    </section>
+
+    <!-- Üstünlüklərimiz -->
+    <section class="features-section">
+      <div class="feature">
+        <i class="fas fa-truck-fast"></i>
+        <h3>Sürətli çatdırılma</h3>
+        <p>Bakı daxili 24 saat, regionlara 2-3 gün ərzində</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-credit-card"></i>
+        <h3>Təhlükəsiz ödəniş</h3>
+        <p>Nağd, kart və ya taksitlə ödəniş imkanı</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-headset"></i>
+        <h3>7/24 Dəstək</h3>
+        <p>Həftənin hər günü müştəri dəstəyi</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Zəmanət</h3>
+        <p>Bütün məhsullar rəsmi zəmanətlə</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Haqqımızda</h3>
+        <p>ElectroTools Azərbaycanın ən böyük elektrik alətləri və elektronika satış mərkəzidir.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Əlaqə</h3>
+        <p><i class="fas fa-phone"></i> +994 50 123 45 67</p>
+        <p><i class="fas fa-envelope"></i> info@electrotools.az</p>
+        <p><i class="fas fa-map-marker-alt"></i> Bakı şəh., Nərimanov r.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Sosial şəbəkələr</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2024 ElectroTools. Bütün hüquqlar qorunur.</p>
+    </div>
+  </footer>
+
+  <script src="homepage.js"></script>
+</body>
+</html>

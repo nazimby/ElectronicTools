@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ElectroTools - Elektronika Mağazası</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+</head>
+<body>
+  <header>
+    <div class="top-banner">
+      <div class="container">
+        <span>Elektronika Alətlərinin Satışı</span>
+      </div>
+    </div>
+    
+    <div class="main-header">
+      <div class="container">
+        <div class="logo">
+          <img src="images/logo.png" alt="ElectroTools" />
+        </div>
+        <div class="search-bar">
+          <input type="text" placeholder="Məhsul axtarışı..." />
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="header-actions">
+          <a href="#" title="Hesabım" id="authButton"><i class="fas fa-user"></i></a>
+          <a href="#" title="Sevimlilər" id="favoritesButton"><i class="fas fa-heart"></i></a>
+          <a href="#" title="Səbət"><i class="fas fa-shopping-cart"></i></a>
+          <a href="#" title="Mesaj" id="contactButton" class="contact-link"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="categories">
+      <div class="container">
+        <ul>
+          <li><a href="homepage.html"><i class="fas fa-home"></i> Ana səhifə</a></li>
+          <li><a href="electronics.html"><i class="fas fa-tools"></i> Elektrik alətləri</a></li>
+          <li><a href="phones.html">Smartfonlar və aksesuarlar</a></li>
+          <li><a href="smart-watches.html">Smart saatlar</a></li>
+          <li><a href="computers.html">Notbuklar və kompüterlər</a></li>
+          <li><a href="repair.html">Təmir və tikinti</a></li>
+          <li><a href="garden.html">Bağ və bağça</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="container main-container">
+      <aside class="catalog-sidebar">
+        <h3>Kataloq</h3>
+        <ul class="catalog-menu">
+          <li>
+            <a href="#"><i class="fas fa-mobile-alt"></i> Smartfonlar və aksesuarlar</a>
+            <ul class="submenu">
+              <li><a href="#">iPhone</a></li>
+              <li><a href="#">Samsung</a></li>
+              <li><a href="#">Xiaomi</a></li>
+              <li><a href="#">OPPO</a></li>
+              <li><a href="#">Telefon aksesuarları</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-tools"></i> Elektrik alətləri</a>
+            <ul class="submenu">
+              <li><a href="#">Perforatorlar</a></li>
+              <li><a href="#">Elektrik burğuları</a></li>
+              <li><a href="#">Qaynaq aparatları</a></li>
+              <li><a href="#">Kəsici alətlər</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-laptop"></i> Notbuklar və kompüterlər</a>
+            <ul class="submenu">
+              <li><a href="#">Notbuklar</a></li>
+              <li><a href="#">Monitorlar</a></li>
+              <li><a href="#">Kompüter hissələri</a></li>
+              <li><a href="#">Kompüter aksesuarları</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-hammer"></i> Təmir və tikinti</a>
+            <ul class="submenu">
+              <li><a href="#">Əl alətləri</a></li>
+              <li><a href="#">Ölçü cihazları</a></li>
+              <li><a href="#">Tikinti materialları</a></li>
+              <li><a href="#">Boya və laklar</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-leaf"></i> Bağ və bağça</a>
+            <ul class="submenu">
+              <li><a href="#">Otbiçənlər</a></li>
+              <li><a href="#">Bağ alətləri</a></li>
+              <li><a href="#">Suvarma sistemləri</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#"><i class="fas fa-clock"></i> Smart saatlar</a>
+            <ul class="submenu">
+              <li><a href="#">Apple Watch</a></li>
+              <li><a href="#">Samsung Galaxy Watch</a></li>
+              <li><a href="#">Xiaomi Mi Band</a></li>
+            </ul>
+          </li>
+        </ul>
+      </aside>
+      
+      <div class="main-content">
+        <section class="product-section">
+          <h2>Ən çox satılan məhsullar</h2>
+          
+          <button class="filter-toggle">
+            <i class="fas fa-filter"></i>
+            Məhsulları filtirləyin
+          </button>
+          
+          <div class="filter-section">
+            <h3 class="filter-title"><i class="fas fa-filter"></i> Məhsulları filtrləyin</h3>
+            <div class="filter-group">
+              <label for="filter-brand">Brend:</label>
+              <select id="filter-brand" class="filter-brand">
+                <option value="all">Hamısı</option>
+                <option value="bosch">Bosch</option>
+                <option value="makita">Makita</option>
+                <option value="dewalt">DeWalt</option>
+                <option value="stanley">Stanley</option>
+              </select>
+            </div>
+            
+            <div class="filter-group">
+              <label for="filter-price">Qiymət:</label>
+              <select id="filter-price" class="filter-price">
+                <option value="all">Hamısı</option>
+                <option value="0-200">0-200 ₼</option>
+                <option value="200-300">200-300 ₼</option>
+                <option value="300-400">300-400 ₼</option>
+                <option value="400+">400+ ₼</option>
+              </select>
+            </div>
+
+            <div class="filter-group range-slider-container">
+              <label for="min-price-range">Qiymət aralığı:</label>
+              <div class="price-range-slider">
+                <div class="price-values">
+                  <span class="min-price">0 ₼</span>
+                  <span class="max-price">500 ₼</span>
+                </div>
+                <div class="range-slider">
+                  <input type="range" id="min-price-range" class="min-range" min="0" max="500" value="0" step="10">
+                  <input type="range" id="max-price-range" class="max-range" min="0" max="500" value="500" step="10">
+                  <div class="slider-track"></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="filter-group">
+              <label for="filter-category">Kateqoriya:</label>
+              <select id="filter-category" class="filter-category">
+                <option value="all">Hamısı</option>
+                <option value="drill">Burğular</option>
+                <option value="saw">Mişarlar</option>
+                <option value="grinder">Cilalayıcılar</option>
+                <option value="measure">Ölçü alətləri</option>
+                <option value="other">Digər</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="filter-sort">Sırala:</label>
+              <select id="filter-sort" class="filter-sort">
+                <option value="default">Standart</option>
+                <option value="price-asc">Qiymət: Azdan çoxa</option>
+                <option value="price-desc">Qiymət: Çoxdan aza</option>
+                <option value="name-asc">Ad: A-dan Z-yə</option>
+                <option value="name-desc">Ad: Z-dən A-ya</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label class="checkbox-label">
+                <input type="checkbox" class="filter-discount" />
+                Yalnız endirimlilər
+              </label>
+            </div>
+          </div>
+
+          <div class="product-grid">
+            <div class="product-card" 
+                 data-category="drill" 
+                 data-brand="bosch" 
+                 data-price="399.99"
+                 data-discount="true">
+              <span class="discount-badge">-15%</span>
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/bosch-drill.jpg" alt="Bosch GSB 18V-50" />
+              <h3>Bosch GSB 18V-50 Professional Elektrik Burğu</h3>
+              <div class="price">
+                <span class="current-price">399.99 ₼</span>
+                <span class="old-price">469.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="grinder" 
+                 data-brand="makita" 
+                 data-price="259.99"
+                 data-discount="true">
+              <span class="discount-badge">-20%</span>
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/makita-grinder.jpg" alt="Makita GA5030" />
+              <h3>Makita GA5030 Bucaqölçən Cilalayıcı 720W</h3>
+              <div class="price">
+                <span class="current-price">259.99 ₼</span>
+                <span class="old-price">324.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="saw" 
+                 data-brand="dewalt" 
+                 data-price="449.99"
+                 data-discount="true">
+              <span class="discount-badge">-10%</span>
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/dewalt-saw.jpg" alt="DeWalt DCS391" />
+              <h3>DeWalt DCS391 20V Dairəvi Mişar</h3>
+              <div class="price">
+                <span class="current-price">449.99 ₼</span>
+                <span class="old-price">499.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="drill" 
+                 data-brand="bosch" 
+                 data-price="299.99"
+                 data-discount="true">
+              <span class="discount-badge">-25%</span>
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/bosch-rotary.jpg" alt="Bosch GBH 2-26" />
+              <h3>Bosch GBH 2-26 Professional Perforator</h3>
+              <div class="price">
+                <span class="current-price">299.99 ₼</span>
+                <span class="old-price">399.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="other" 
+                 data-brand="stanley" 
+                 data-price="159.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/stanley-heat.jpg" alt="Stanley FMHT770" />
+              <h3>Stanley FMHT770 İstilik Tapançası 2000W</h3>
+              <div class="price">
+                <span class="current-price">159.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="grinder" 
+                 data-brand="makita" 
+                 data-price="189.99"
+                 data-discount="true">
+              <span class="discount-badge">-30%</span>
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/makita-sander.jpg" alt="Makita BO5041" />
+              <h3>Makita BO5041 Ekssentrik Cilalayıcı</h3>
+              <div class="price">
+                <span class="current-price">189.99 ₼</span>
+                <span class="old-price">269.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="measure" 
+                 data-brand="bosch" 
+                 data-price="199.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/bosch-measure.jpg" alt="Bosch GLM 40" />
+              <h3>Bosch GLM 40 Professional Lazer Məsafəölçən</h3>
+              <div class="price">
+                <span class="current-price">199.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="drill" 
+                 data-brand="dewalt" 
+                 data-price="329.99"
+                 data-discount="true">
+              <span class="discount-badge">-15%</span>
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/dewalt-impact.jpg" alt="DeWalt DCF887" />
+              <h3>DeWalt DCF887 20V Zərbəli Vintburan</h3>
+              <div class="price">
+                <span class="current-price">329.99 ₼</span>
+                <span class="old-price">389.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="other" 
+                 data-brand="makita" 
+                 data-price="279.99"
+                 data-discount="true">
+              <span class="discount-badge">-20%</span>
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/makita-planer.jpg" alt="Makita KP0800" />
+              <h3>Makita KP0800 Elektrik Rəndə 82mm</h3>
+              <div class="price">
+                <span class="current-price">279.99 ₼</span>
+                <span class="old-price">349.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="other" 
+                 data-brand="bosch" 
+                 data-price="289.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/bosch-multi.jpg" alt="Bosch GOP 40-30" />
+              <h3>Bosch GOP 40-30 Professional Multi-Cutter</h3>
+              <div class="price">
+                <span class="current-price">289.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <!-- New products without discounts -->
+            <div class="product-card" 
+                 data-category="drill" 
+                 data-brand="milwaukee" 
+                 data-price="349.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/milwaukee-drill.jpg" alt="Milwaukee M18" />
+              <h3>Milwaukee M18 FUEL Akkumulyatorlu Dəlici Burğu</h3>
+              <div class="price">
+                <span class="current-price">349.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="saw" 
+                 data-brand="bosch" 
+                 data-price="219.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/bosch-circular-saw.jpg" alt="Bosch PKS 55" />
+              <h3>Bosch PKS 55 Dairəvi Elektrikli Mişar</h3>
+              <div class="price">
+                <span class="current-price">219.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="measure" 
+                 data-brand="dewalt" 
+                 data-price="179.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/dewalt-laser.jpg" alt="DeWalt DW088K" />
+              <h3>DeWalt DW088K Lazer Səviyyə</h3>
+              <div class="price">
+                <span class="current-price">179.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="grinder" 
+                 data-brand="hilti" 
+                 data-price="429.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/hilti-grinder.jpg" alt="Hilti AG 115-S" />
+              <h3>Hilti AG 115-S Bucaqölçən Cilalayıcı</h3>
+              <div class="price">
+                <span class="current-price">429.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="saw" 
+                 data-brand="ryobi" 
+                 data-price="259.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/ryobi-jigsaw.jpg" alt="Ryobi R18JS-0" />
+              <h3>Ryobi R18JS-0 Elektrik Qələm Mişarı</h3>
+              <div class="price">
+                <span class="current-price">259.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="drill" 
+                 data-brand="aeg" 
+                 data-price="319.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/aeg-drill.jpg" alt="AEG BS18G3LI-202C" />
+              <h3>AEG BS18G3LI-202C Akkumulyatorlu Burğu</h3>
+              <div class="price">
+                <span class="current-price">319.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="measure" 
+                 data-brand="leica" 
+                 data-price="239.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/leica-disto.jpg" alt="Leica DISTO D2" />
+              <h3>Leica DISTO D2 Lazer Məsafəölçən</h3>
+              <div class="price">
+                <span class="current-price">239.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="grinder" 
+                 data-brand="metabo" 
+                 data-price="179.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/metabo-grinder.jpg" alt="Metabo W 750-125" />
+              <h3>Metabo W 750-125 Cilalayıcı</h3>
+              <div class="price">
+                <span class="current-price">179.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="saw" 
+                 data-brand="festool" 
+                 data-price="389.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/festool-saw.jpg" alt="Festool TS 55" />
+              <h3>Festool TS 55 REBQ-PLUS Dalma Mişar</h3>
+              <div class="price">
+                <span class="current-price">389.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+
+            <div class="product-card" 
+                 data-category="saw" 
+                 data-brand="makita" 
+                 data-price="249.99"
+                 data-discount="false">
+              <button class="favorite-btn" title="Sevimlilərə əlavə et"><i class="fas fa-heart"></i></button>
+              <img src="images/products/makita-jigsaw.jpg" alt="Makita JV0600K" />
+              <h3>Makita JV0600K Qələm Mişarı</h3>
+              <div class="price">
+                <span class="current-price">249.99 ₼</span>
+              </div>
+              <div class="button-container">
+                <button class="add-to-cart">Səbətə at</button>
+                <button class="view-details">Ətraflı</button>
+              </div>
+            </div>
+        </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <h4>ElectroTools</h4>
+          <ul>
+            <li><a href="#">Haqqımızda</a></li>
+            <li><a href="#">Karyera</a></li>
+            <li><a href="#">Əlaqə</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Müştərilər üçün</h4>
+          <ul>
+            <li><a href="#">Çatdırılma</a></li>
+            <li><a href="#">Ödəmə üsulları</a></li>
+            <li><a href="#">Zəmanət</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© ElectroTools 2024. Bütün hüquqlar qorunur.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Səbət Modal -->
+  <div class="cart-modal" id="cartModal">
+    <div class="cart-content">
+      <div class="cart-header">
+        <h2>Səbət</h2>
+        <button class="close-cart">&times;</button>
+      </div>
+      <div class="cart-items">
+        <!-- Səbət elementləri burada görüntülənəcək -->
+      </div>
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Ümumi məbləğ:</span>
+          <span class="total-amount">0.00 ₼</span>
+        </div>
+        <button class="checkout-btn">Sifarişi rəsmiləşdir</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sevimlilər Modal -->
+  <div class="favorites-modal" id="favoritesModal">
+    <div class="favorites-content">
+      <div class="favorites-header">
+        <h2>Sevimlilər</h2>
+        <button class="close-favorites">&times;</button>
+      </div>
+      <div class="favorites-items">
+        <!-- Sevimlilər elementləri burada görüntülənəcək -->
+      </div>
+      <div class="favorites-footer">
+        <button class="clear-favorites">Sevilmiləri təmizlə</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Qeydiyyat Modal -->
+  <div class="auth-modal" id="registerModal">
+    <div class="auth-content">
+      <div class="auth-header">
+        <h2>Qeydiyyat</h2>
+        <button class="close-auth">&times;</button>
+      </div>
+      <div class="auth-body">
+        <form id="registerForm">
+          <div class="form-group">
+            <label for="regName">Ad, Soyad</label>
+            <input type="text" id="regName" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="regEmail">E-poçt</label>
+            <input type="email" id="regEmail" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="regPassword">Şifrə</label>
+            <input type="password" id="regPassword" name="password" required>
+          </div>
+          <div class="form-group">
+            <label for="regConfirmPassword">Şifrəni təsdiqləyin</label>
+            <input type="password" id="regConfirmPassword" name="confirmPassword" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="submit-btn">Qeydiyyatdan keç</button>
+          </div>
+        </form>
+        <p class="toggle-auth">Artıq hesabınız var? <a href="#" id="showLogin">Daxil olun</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Giriş Modal -->
+  <div class="auth-modal" id="loginModal">
+    <div class="auth-content">
+      <div class="auth-header">
+        <h2>Daxil olun</h2>
+        <button class="close-auth">&times;</button>
+      </div>
+      <div class="auth-body">
+        <form id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">E-poçt</label>
+            <input type="email" id="loginEmail" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="loginPassword">Şifrə</label>
+            <input type="password" id="loginPassword" name="password" required>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="submit-btn">Daxil ol</button>
+          </div>
+        </form>
+        <p class="toggle-auth">Hesabınız yoxdur? <a href="#" id="showRegister">Qeydiyyatdan keçin</a></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Məhsul Detalları Modal -->
+  <div class="product-modal" id="productModal">
+    <div class="product-modal-content">
+      <div class="product-modal-header">
+        <h2 id="productModalTitle">Məhsul adı</h2>
+        <button class="close-product-modal">&times;</button>
+      </div>
+      <div class="product-modal-body">
+        <div class="product-modal-grid">
+          <div class="product-modal-image">
+            <img id="productModalImage" src="" alt="Məhsul şəkli">
+          </div>
+          <div class="product-modal-info">
+            <div class="product-modal-price">
+              <span id="productModalPrice">0.00 ₼</span>
+              <span id="productModalOldPrice" class="old-price">0.00 ₼</span>
+            </div>
+            <div class="product-modal-actions">
+              <button class="add-to-cart-modal">Səbətə at</button>
+              <button class="add-to-favorites-modal"><i class="fas fa-heart"></i> Sevimlilərə əlavə et</button>
+            </div>
+            <div class="product-modal-specs">
+              <h3>Xüsusiyyətlər</h3>
+              <ul id="productModalSpecs">
+                <!-- Specifications will be added dynamically -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="product-modal-description">
+          <h3>Məhsul haqqında</h3>
+          <p id="productModalDescription">Məhsul təsviri burada olacaq.</p>
+        </div>
+        <div class="product-modal-reviews">
+          <h3>İstifadəçi rəyləri</h3>
+          <div class="overall-rating">
+            <div class="rating-stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="rating-value">4.5</span>
+            <span class="rating-count">(24 rəy)</span>
+          </div>
+          <div class="reviews-list" id="reviewsList">
+            <!-- Reviews will be added dynamically -->
+          </div>
+          <div class="add-review">
+            <h4>Rəy əlavə edin</h4>
+            <div class="rating-selector">
+              <span>Qiymətləndirmə:</span>
+              <div class="star-selector">
+                <i class="far fa-star" data-rating="1"></i>
+                <i class="far fa-star" data-rating="2"></i>
+                <i class="far fa-star" data-rating="3"></i>
+                <i class="far fa-star" data-rating="4"></i>
+                <i class="far fa-star" data-rating="5"></i>
+              </div>
+            </div>
+            <textarea placeholder="Rəyinizi daxil edin..." class="review-text"></textarea>
+            <button class="submit-review">Rəy göndər</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Developerlərə Mesaj Modal -->
+  <div class="contact-modal" id="contactModal">
+    <div class="contact-content">
+      <div class="contact-header">
+        <h2>Developerlərə mesaj</h2>
+        <button class="close-contact">&times;</button>
+      </div>
+      <div class="contact-body">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="contactSubject">Mövzu</label>
+            <input type="text" id="contactSubject" name="subject" required>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Mesaj</label>
+            <textarea id="contactMessage" name="message" rows="6" required></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="submit-btn">Göndər</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
