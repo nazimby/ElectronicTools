@@ -192,10 +192,15 @@ function initializePriceRangeSlider() {
     minPriceDisplay.textContent = minVal + ' ₼';
     maxPriceDisplay.textContent = maxVal + ' ₼';
 
-    sliderTrack.style.setProperty('--left', ((minVal - minPrice) / (maxPrice - minPrice)) * 100 + '%');
-    sliderTrack.style.setProperty('--right', (100 - ((maxVal - minPrice) / (maxPrice - minPrice)) * 100) + '%');
+    // Calculate percentages for the colored part of the slider
+    const range = maxPrice - minPrice;
+    const leftPercent = ((minVal - minPrice) / range) * 100;
+    const rightPercent = 100 - ((maxVal - minPrice) / range) * 100;
 
-    applyFilters(); // Filtrləri yenidən tətbiq edin
+    sliderTrack.style.setProperty('--left', leftPercent + '%');
+    sliderTrack.style.setProperty('--right', rightPercent + '%');
+
+    applyFilters(); // Tətbiq et
   }
   
   minRangeInput.addEventListener('input', updateSlider);
@@ -495,7 +500,7 @@ class Favorites {
 
   bindEvents() {
     // Sevimlilər ikonuna klik
-    document.getElementById('favoritesButton').addEventListener('click', (e) => {
+    document.querySelector('.header-actions a[title="Sevimlilər"]').addEventListener('click', (e) => {
       e.preventDefault();
       this.toggleFavorites();
     });
@@ -504,6 +509,7 @@ class Favorites {
     document.querySelectorAll('.favorite-btn').forEach(button => {
       button.addEventListener('click', (e) => {
         e.preventDefault();
+        e.stopPropagation(); // Prevent event bubbling
         const btn = e.target.closest('.favorite-btn');
         const card = btn.closest('.product-card');
         const isFavorited = btn.classList.contains('active');
@@ -529,6 +535,7 @@ class Favorites {
         const btn = e.target.closest('.favorite-btn');
         if (btn) {
           e.preventDefault();
+          e.stopPropagation(); // Prevent event bubbling
           const card = btn.closest('.product-card');
           const isFavorited = btn.classList.contains('active');
           
@@ -570,7 +577,7 @@ class Favorites {
       this.items.push(item);
       this.updateFavoritesDisplay();
       this.saveToLocalStorage();
-      alert('Məhsul sevimlilərə əlavə edildi!');
+      showNotification('Məhsul sevimlilərə əlavə edildi!');
     }
   }
 
@@ -591,65 +598,7 @@ class Favorites {
   }
 
   updateFavoritesDisplay() {
-    // Səbət obyektini yaradın
-    let cart = [];
-    
-    // Səbətə məhsul əlavə etmək funksiyası
-    function addToCart(productId) {
-      // Məhsulu səbətə əlavə edin
-      const product = cart.find(item => item.id === productId);
-      if (product) {
-        product.quantity += 1; // Əgər məhsul artıq səbətdədirsə, miqdarı artırın
-      } else {
-        cart.push({ id: productId, quantity: 1 }); // Yeni məhsulu səbətə əlavə edin
-      }
-      updateCartUI();
-    }
-    
-    // Səbət UI-ni yeniləyən funksiyanı yaradın
-    function updateCartUI() {
-      const cartItemsContainer = document.querySelector('.cart-items');
-      const totalAmountElement = document.querySelector('.total-amount');
-    
-      // Səbət elementlərini təmizləyin
-      cartItemsContainer.innerHTML = '';
-    
-      // Səbət boşdursa, mesaj göstərin
-      if (cart.length === 0) {
-        cartItemsContainer.innerHTML = '<p>Səbət boşdur.</p>';
-        totalAmountElement.textContent = '0.00 ₼';
-        return;
-      }
-    
-      // Məhsulları səbətə əlavə edin
-      let totalAmount = 0;
-      cart.forEach(item => {
-        const productElement = document.createElement('div');
-        productElement.classList.add('cart-item');
-        productElement.textContent = `Məhsul ID: ${item.id}, Miqdar: ${item.quantity}`;
-        cartItemsContainer.appendChild(productElement);
-    
-        // Məbləği hesablayın (məsələn, hər məhsulun qiyməti 100 ₼ olaraq təyin edilib)
-        totalAmount += item.quantity * 100;
-      });
-    
-      // Ümumi məbləği yeniləyin
-      totalAmountElement.textContent = `${totalAmount.toFixed(2)} ₼`;
-    }
-    
-    // Səbətə əlavə et düymələrinə klik hadisəsini əlavə edin
-    document.querySelectorAll('.add-to-cart').forEach(button => {
-      button.addEventListener('click', () => {
-        const productId = button.closest('.product-card').getAttribute('data-id');
-        addToCart(productId);
-      });
-    });
-    
-    // Sayt yüklənəndə səbəti boş saxlayın
-    document.addEventListener('DOMContentLoaded', () => {
-      cart = [];
-      updateCartUI();
-    });    // Sevimlilər badge-ini yenilə
+    // Sevimlilər badge-ini yenilə
     this.favoriteBadge.textContent = this.items.length;
     this.favoriteBadge.style.display = this.items.length > 0 ? 'block' : 'none';
     
@@ -1131,10 +1080,75 @@ class ProductDetails {
       return;
     }
     
-    // Simulyasiya: Burada əslində API-yə sorğu göndəriləcək
-    alert('Rəyiniz uğurla göndərildi!');
+    // Yeni şərhi əlavə edək
+    const today = new Date();
+    const dateStr = today.getDate() + '.' + (today.getMonth() + 1) + '.' + today.getFullYear();
+    
+    const newReview = {
+      author: window.auth.user ? window.auth.user.name : 'İstifadəçi',
+      date: dateStr,
+      rating: activeStars,
+      text: reviewText
+    };
+    
+    // Məhsul data-sını yoxlayırıq, yoxdursa yaradırıq
+    if (!this.productData[this.currentProduct]) {
+      this.productData[this.currentProduct] = {
+        description: document.getElementById('productModalDescription').textContent,
+        specs: [],
+        reviews: []
+      };
+    }
+    
+    // Şərhi əlavə edirik
+    this.productData[this.currentProduct].reviews.unshift(newReview);
+    
+    // Şərhlər listi yeniləyək
+    const reviewsList = document.getElementById('reviewsList');
+    const newReviewHtml = `
+      <div class="review-item">
+        <div class="review-header">
+          <span class="review-author">${newReview.author}</span>
+          <span class="review-date">${newReview.date}</span>
+        </div>
+        <div class="review-rating">
+          ${this.renderStars(newReview.rating)}
+        </div>
+        <div class="review-content">
+          ${newReview.text}
+        </div>
+      </div>
+    `;
+    
+    // Əvvəlcə yeni şərhi əlavə edirik
+    reviewsList.innerHTML = newReviewHtml + reviewsList.innerHTML;
+    
+    // Ümumi reytinqi yeniləyirik
+    this.updateOverallRating();
+    
+    // Formu təmizləyirik
     document.querySelector('.review-text').value = '';
     this.selectRating(0);
+    
+    // Bildiriş göstəririk
+    showNotification('Rəyiniz uğurla göndərildi!');
+  }
+  
+  updateOverallRating() {
+    const reviews = this.productData[this.currentProduct].reviews;
+    if (reviews && reviews.length > 0) {
+      // Orta reytinqi hesablayaq
+      const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
+      const averageRating = totalRating / reviews.length;
+      
+      // Reytinqi yeniləyək
+      document.querySelector('.rating-value').textContent = averageRating.toFixed(1);
+      document.querySelector('.rating-count').textContent = `(${reviews.length} rəy)`;
+      
+      // Ulduzları yeniləyək
+      const starsContainer = document.querySelector('.overall-rating .rating-stars');
+      starsContainer.innerHTML = this.renderStars(averageRating);
+    }
   }
 }
 
@@ -1161,8 +1175,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const filterToggle = document.querySelector('.filter-toggle');
   const filterSection = document.querySelector('.filter-section');
 
+  // Display status for filter section (default hidden)
+  filterSection.style.display = 'none';
+
   filterToggle.addEventListener('click', () => {
-    filterSection.classList.toggle('active');
-    filterToggle.classList.toggle('active');
+    if (filterSection.style.display === 'none') {
+      filterSection.style.display = 'block';
+      filterToggle.classList.add('active');
+    } else {
+      filterSection.style.display = 'none';
+      filterToggle.classList.remove('active');
+    }
+  });
+  
+  // Initialize favorite buttons for existing products
+  document.querySelectorAll('.product-card').forEach(card => {
+    const title = card.querySelector('h3').textContent;
+    const favBtn = card.querySelector('.favorite-btn');
+    
+    // Check if this product is in favorites
+    if (window.favorites.items.some(item => item.title === title)) {
+      favBtn.classList.add('active');
+    }
   });
 });

@@ -18,7 +18,10 @@
     <div class="main-header">
       <div class="container">
         <div class="logo">
-          <img src="images/logo.png" alt="ElectroTools" />
+          <a href="index.html">
+            <span class="logo-icon"><i class="fas fa-tools"></i></span>
+            <span class="logo-text">ElectroTools</span>
+          </a>
         </div>
         <div class="search-bar">
           <input type="text" placeholder="Məhsul axtarışı..." />
@@ -36,7 +39,7 @@
     <nav class="categories">
       <div class="container">
         <ul>
-          <li><a href="homepage.html"><i class="fas fa-home"></i> Ana səhifə</a></li>
+          <li><a href="index.html"><i class="fas fa-home"></i> Ana səhifə</a></li>
           <li><a href="electronics.html"><i class="fas fa-tools"></i> Elektrik alətləri</a></li>
           <li><a href="phones.html">Smartfonlar və aksesuarlar</a></li>
           <li><a href="smart-watches.html">Smart saatlar</a></li>
@@ -118,73 +121,78 @@
             Məhsulları filtirləyin
           </button>
           
-          <div class="filter-section">
+          <div class="filter-section compact-filter">
             <h3 class="filter-title"><i class="fas fa-filter"></i> Məhsulları filtrləyin</h3>
-            <div class="filter-group">
-              <label for="filter-brand">Brend:</label>
-              <select id="filter-brand" class="filter-brand">
-                <option value="all">Hamısı</option>
-                <option value="bosch">Bosch</option>
-                <option value="makita">Makita</option>
-                <option value="dewalt">DeWalt</option>
-                <option value="stanley">Stanley</option>
-              </select>
-            </div>
             
-            <div class="filter-group">
-              <label for="filter-price">Qiymət:</label>
-              <select id="filter-price" class="filter-price">
-                <option value="all">Hamısı</option>
-                <option value="0-200">0-200 ₼</option>
-                <option value="200-300">200-300 ₼</option>
-                <option value="300-400">300-400 ₼</option>
-                <option value="400+">400+ ₼</option>
-              </select>
-            </div>
-
-            <div class="filter-group range-slider-container">
-              <label for="min-price-range">Qiymət aralığı:</label>
-              <div class="price-range-slider">
-                <div class="price-values">
-                  <span class="min-price">0 ₼</span>
-                  <span class="max-price">500 ₼</span>
-                </div>
-                <div class="range-slider">
-                  <input type="range" id="min-price-range" class="min-range" min="0" max="500" value="0" step="10">
-                  <input type="range" id="max-price-range" class="max-range" min="0" max="500" value="500" step="10">
-                  <div class="slider-track"></div>
-                </div>
+            <div class="filter-row">
+              <div class="filter-group">
+                <label for="filter-brand">Brend:</label>
+                <select id="filter-brand" class="filter-brand">
+                  <option value="all">Hamısı</option>
+                  <option value="bosch">Bosch</option>
+                  <option value="makita">Makita</option>
+                  <option value="dewalt">DeWalt</option>
+                  <option value="stanley">Stanley</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="filter-price">Qiymət:</label>
+                <select id="filter-price" class="filter-price">
+                  <option value="all">Hamısı</option>
+                  <option value="0-200">0-200 ₼</option>
+                  <option value="200-300">200-300 ₼</option>
+                  <option value="300-400">300-400 ₼</option>
+                  <option value="400+">400+ ₼</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="filter-category">Kateqoriya:</label>
+                <select id="filter-category" class="filter-category">
+                  <option value="all">Hamısı</option>
+                  <option value="drill">Burğular</option>
+                  <option value="saw">Mişarlar</option>
+                  <option value="grinder">Cilalayıcılar</option>
+                  <option value="measure">Ölçü alətləri</option>
+                  <option value="other">Digər</option>
+                </select>
+              </div>
+              
+              <div class="filter-group">
+                <label for="filter-sort">Sırala:</label>
+                <select id="filter-sort" class="filter-sort">
+                  <option value="default">Standart</option>
+                  <option value="price-asc">Qiymət: Azdan çoxa</option>
+                  <option value="price-desc">Qiymət: Çoxdan aza</option>
+                  <option value="name-asc">Ad: A-dan Z-yə</option>
+                  <option value="name-desc">Ad: Z-dən A-ya</option>
+                </select>
               </div>
             </div>
-            
-            <div class="filter-group">
-              <label for="filter-category">Kateqoriya:</label>
-              <select id="filter-category" class="filter-category">
-                <option value="all">Hamısı</option>
-                <option value="drill">Burğular</option>
-                <option value="saw">Mişarlar</option>
-                <option value="grinder">Cilalayıcılar</option>
-                <option value="measure">Ölçü alətləri</option>
-                <option value="other">Digər</option>
-              </select>
-            </div>
 
-            <div class="filter-group">
-              <label for="filter-sort">Sırala:</label>
-              <select id="filter-sort" class="filter-sort">
-                <option value="default">Standart</option>
-                <option value="price-asc">Qiymət: Azdan çoxa</option>
-                <option value="price-desc">Qiymət: Çoxdan aza</option>
-                <option value="name-asc">Ad: A-dan Z-yə</option>
-                <option value="name-desc">Ad: Z-dən A-ya</option>
-              </select>
-            </div>
+            <div class="filter-row">
+              <div class="filter-group range-slider-container">
+                <label for="min-price-range">Qiymət aralığı:</label>
+                <div class="price-range-slider">
+                  <div class="price-values">
+                    <span class="min-price">0 ₼</span>
+                    <span class="max-price">500 ₼</span>
+                  </div>
+                  <div class="range-slider">
+                    <input type="range" id="min-price-range" class="min-range" min="0" max="500" value="0" step="10">
+                    <input type="range" id="max-price-range" class="max-range" min="0" max="500" value="500" step="10">
+                    <div class="slider-track"></div>
+                  </div>
+                </div>
+              </div>
 
-            <div class="filter-group">
-              <label class="checkbox-label">
-                <input type="checkbox" class="filter-discount" />
-                Yalnız endirimlilər
-              </label>
+              <div class="filter-group checkbox-container">
+                <label class="checkbox-label">
+                  <input type="checkbox" class="filter-discount" />
+                  Yalnız endirimlilər
+                </label>
+              </div>
             </div>
           </div>
 
