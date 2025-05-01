@@ -1739,3 +1739,32 @@ footer {
     flex: 1 0 100%;
   }
 }
+
+.add-review-login-message {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  padding: 15px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.add-review-login-message a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 5px;
+}
+
+.add-review-login-message a:hover {
+  text-decoration: underline;
+}
+
+body:not(.logged-in) .add-review-form {
+  display: none;
+}
+
+body.logged-in .add-review-login-message {
+  display: none;
+}

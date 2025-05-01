@@ -633,10 +633,6 @@
             <input type="text" id="regName" name="name" required>
           </div>
           <div class="form-group">
-            <label for="regEmail">E-poçt</label>
-            <input type="email" id="regEmail" name="email" required>
-          </div>
-          <div class="form-group">
             <label for="regPassword">Şifrə</label>
             <input type="password" id="regPassword" name="password" required>
           </div>
@@ -663,8 +659,8 @@
       <div class="auth-body">
         <form id="loginForm">
           <div class="form-group">
-            <label for="loginEmail">E-poçt</label>
-            <input type="email" id="loginEmail" name="email" required>
+            <label for="loginName">Ad, Soyad</label>
+            <input type="text" id="loginName" name="name" required>
           </div>
           <div class="form-group">
             <label for="loginPassword">Şifrə</label>
@@ -730,18 +726,26 @@
           </div>
           <div class="add-review">
             <h4>Rəy əlavə edin</h4>
-            <div class="rating-selector">
-              <span>Qiymətləndirmə:</span>
-              <div class="star-selector">
-                <i class="far fa-star" data-rating="1"></i>
-                <i class="far fa-star" data-rating="2"></i>
-                <i class="far fa-star" data-rating="3"></i>
-                <i class="far fa-star" data-rating="4"></i>
-                <i class="far fa-star" data-rating="5"></i>
-              </div>
+            <div class="add-review-login-message">
+              Rəy yazmaq üçün hesabınıza daxil olmalısınız.
+              <a href="#" id="reviewLoginBtn">Qeydiyyatdan keçin</a>
+              və ya 
+              <a href="#" id="reviewSigninBtn">Daxil olun</a>
             </div>
-            <textarea placeholder="Rəyinizi daxil edin..." class="review-text"></textarea>
-            <button class="submit-review">Rəy göndər</button>
+            <div class="add-review-form">
+              <div class="rating-selector">
+                <span>Qiymətləndirmə:</span>
+                <div class="star-selector">
+                  <i class="far fa-star" data-rating="1"></i>
+                  <i class="far fa-star" data-rating="2"></i>
+                  <i class="far fa-star" data-rating="3"></i>
+                  <i class="far fa-star" data-rating="4"></i>
+                  <i class="far fa-star" data-rating="5"></i>
+                </div>
+              </div>
+              <textarea placeholder="Rəyinizi daxil edin..." class="review-text"></textarea>
+              <button class="submit-review">Rəy göndər</button>
+            </div>
           </div>
         </div>
       </div>

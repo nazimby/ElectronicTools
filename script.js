@@ -749,7 +749,6 @@ class Auth {
 
   register() {
     const name = document.getElementById('regName').value;
-    const email = document.getElementById('regEmail').value;
     const password = document.getElementById('regPassword').value;
     const confirmPassword = document.getElementById('regConfirmPassword').value;
 
@@ -758,8 +757,21 @@ class Auth {
       return;
     }
 
-    // Simulyasiya: Burada əslində API-yə sorğu göndəriləcək
-    this.user = { name, email };
+    // Get existing users or create empty array
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    // Check if the user already exists
+    if (users.some(user => user.name === name)) {
+      alert('Bu ad artıq istifadə olunur.');
+      return;
+    }
+
+    // Add new user
+    users.push({ name, password });
+    localStorage.setItem('users', JSON.stringify(users));
+    
+    // Log in the user
+    this.user = { name };
     localStorage.setItem('user', JSON.stringify(this.user));
     this.updateUserState();
     this.registerModal.classList.remove('active');
@@ -767,15 +779,24 @@ class Auth {
   }
 
   login() {
-    const email = document.getElementById('loginEmail').value;
+    const name = document.getElementById('loginName').value;
     const password = document.getElementById('loginPassword').value;
 
-    // Simulyasiya: Burada əslində API-yə sorğu göndəriləcək
-    this.user = { name: 'İstifadəçi', email };
-    localStorage.setItem('user', JSON.stringify(this.user));
-    this.updateUserState();
-    this.loginModal.classList.remove('active');
-    alert('Uğurla daxil oldunuz!');
+    // Get users from localStorage
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    // Find the user
+    const user = users.find(u => u.name === name && u.password === password);
+    
+    if (user) {
+      this.user = { name: user.name };
+      localStorage.setItem('user', JSON.stringify(this.user));
+      this.updateUserState();
+      this.loginModal.classList.remove('active');
+      alert('Uğurla daxil oldunuz!');
+    } else {
+      alert('Ad və ya şifrə səhvdir.');
+    }
   }
 
   logout() {
@@ -966,6 +987,15 @@ class ProductDetails {
     document.querySelector('.submit-review').addEventListener('click', () => {
       this.submitReview();
     });
+
+    // Review login button
+    document.getElementById('reviewLoginBtn').addEventListener('click', (e) => {
+      e.preventDefault();
+      // Close the product details modal first
+      this.closeProductDetails();
+      // Then show the registration modal
+      window.auth.showRegisterModal();
+    });
   }
 
   showProductDetails(title, image, price, oldPrice, hasDiscount) {
@@ -1067,6 +1097,13 @@ class ProductDetails {
   }
 
   submitReview() {
+    // Check if user is logged in
+    if (!window.auth.user) {
+      alert('Rəy yazmaq üçün qeydiyyatdan keçmək və ya daxil olmaq lazımdır!');
+      window.auth.showLoginModal();
+      return;
+    }
+
     const activeStars = document.querySelectorAll('.star-selector i.active').length;
     const reviewText = document.querySelector('.review-text').value.trim();
     
@@ -1085,7 +1122,7 @@ class ProductDetails {
     const dateStr = today.getDate() + '.' + (today.getMonth() + 1) + '.' + today.getFullYear();
     
     const newReview = {
-      author: window.auth.user ? window.auth.user.name : 'İstifadəçi',
+      author: window.auth.user.name,
       date: dateStr,
       rating: activeStars,
       text: reviewText
